@@ -52,10 +52,12 @@ class NotificationService {
 
   // Request notification permission
   Future<void> requestNotificationPermission() async {
-    if (await Permission.notification.request().isGranted) {
+    var status = await Permission.notification.request();
+    if (status.isGranted) {
       print("Notification permission granted");
     } else {
       print("Notification permission denied");
     }
   }
+
 }

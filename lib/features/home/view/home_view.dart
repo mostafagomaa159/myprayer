@@ -1,9 +1,4 @@
-import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-
-import 'package:myprayer/features/home/view_model/home_cubit.dart';
-import 'package:myprayer/features/home/view_model/home_state.dart';
-
+part of '../home_imports.dart';
 class HomeView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {

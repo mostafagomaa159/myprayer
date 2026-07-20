@@ -4,12 +4,17 @@ import 'package:myprayer/core/services/notification_service.dart';
 import 'package:myprayer/core/services/prayer_service.dart';
 
 final locator = GetIt.instance;
-
 void setupLocator() {
-  locator.registerLazySingleton<LocationService>(() => LocationService());
-  locator.registerLazySingleton<NotificationService>(() => NotificationService());
-  locator.registerLazySingleton<PrayerService>(() => PrayerService(
-    locator<LocationService>(),
-    locator<NotificationService>(),
-  ));
+  if (!locator.isRegistered<LocationService>()) {
+    locator.registerLazySingleton<LocationService>(() => LocationService());
+  }
+  if (!locator.isRegistered<NotificationService>()) {
+    locator.registerLazySingleton<NotificationService>(() => NotificationService());
+  }
+  if (!locator.isRegistered<PrayerService>()) {
+    locator.registerLazySingleton<PrayerService>(() => PrayerService(
+      locator<LocationService>(),
+      locator<NotificationService>(),
+    ));
+  }
 }

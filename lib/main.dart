@@ -1,11 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:myprayer/features/home/home_imports.dart';
 import 'package:workmanager/workmanager.dart'; // Import Workmanager
 import 'package:myprayer/core/base/locator/locator.dart';
 import 'package:myprayer/core/services/notification_service.dart';
 import 'package:myprayer/core/services/prayer_service.dart';
-import 'package:myprayer/features/home/view_model/home_cubit.dart';
-import 'package:myprayer/features/home/view/home_view.dart';
 import 'core/utili/callbackDispatcher.dart'; // Import your callback dispatcher
 
 void main() async {
